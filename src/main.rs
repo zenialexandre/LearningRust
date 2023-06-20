@@ -1,3 +1,7 @@
+use reversing_string::init_reversing_string;
+
+mod reversing_string;
+
 fn main() {
-    println!("Hello, world!");
+    init_reversing_string();
 }
