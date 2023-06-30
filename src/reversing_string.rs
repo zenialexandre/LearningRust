@@ -1,5 +1,3 @@
-use std::io;
-use std::io::Write;
 use crate::helper;
 
 pub fn init_reversing_string() {
