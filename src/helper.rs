@@ -20,6 +20,6 @@ pub fn get_user_input(mut any_variable: String, information_requested: String) -
     return any_variable.trim().to_string();
 }
 
-pub fn get_powered_number(mut any_number: i32, times_to_power: u32) -> i32 {
+pub fn get_powered_number(any_number: i32, times_to_power: u32) -> i32 {
    return any_number.pow(times_to_power);
 }

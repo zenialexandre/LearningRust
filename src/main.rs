@@ -1,11 +1,13 @@
 use reversing_string::init_reversing_string;
 use crate::leap_year::init_leap_year;
 use crate::armstrong_number::init_armstrong_number;
+use crate::isogram::init_isogram;
 
 mod reversing_string;
 mod leap_year;
 mod armstrong_number;
 mod helper;
+mod isogram;
 
 fn main() {
     choose_exercise();
@@ -18,7 +20,7 @@ fn choose_exercise() {
 }
 
 fn search_inputted_exercise(exercise_input: String) {
-    let exercises_vector = vec!["reversing_string".to_string(), "leap_year".to_string(), "armstrong_number".to_string()];
+    let exercises_vector = vec!["reversing_string".to_string(), "leap_year".to_string(), "armstrong_number".to_string(), "isogram".to_string()];
 
     if exercises_vector.contains(&exercise_input) {
         run_chosen_exercise(exercise_input, exercises_vector);
@@ -34,5 +36,7 @@ fn run_chosen_exercise(exercise_input: String, exercises_vector: Vec<String>) {
         init_leap_year();
     } else if exercise_input.eq_ignore_ascii_case(&exercises_vector[2]) {
         init_armstrong_number();
+    } else if exercise_input.eq_ignore_ascii_case(&exercises_vector[3]) {
+        init_isogram();
     }
 }
