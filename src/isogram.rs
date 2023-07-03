@@ -16,15 +16,16 @@ fn build_chars_vector(isogram_input: String) {
 }
 
 fn is_isogram(chars_vector: Vec<char>) -> bool {
-    let mut generic_chars_vector: Vec<char> = chars_vector.clone();
-    let mut generic_char: char;
+    let mut generic_chars_vector: Vec<char> = vec![];
+    let mut generic_char: &char;
 
     for (i, i_element) in chars_vector.iter().enumerate() {
-        generic_char = *i_element;
+        generic_chars_vector = chars_vector.clone();
+        generic_char = i_element;
         generic_chars_vector.remove(i);
 
         for generic_element in &generic_chars_vector {
-            if generic_char == *generic_element {
+            if generic_char == generic_element {
                 return false;
             }
         }
