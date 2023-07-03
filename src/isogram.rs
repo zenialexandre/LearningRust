@@ -3,7 +3,11 @@ use crate::helper;
 pub fn init_isogram() {
     let mut isogram_input = String::new();
     isogram_input = helper::get_user_input(isogram_input, "String to be checked".to_string());
-    build_chars_vector(isogram_input.trim().to_string());
+    build_chars_vector(remove_dash(isogram_input));
+}
+
+fn remove_dash(isogram_input: String) -> String {
+    return isogram_input.trim().to_string().replace("-", "");
 }
 
 fn build_chars_vector(isogram_input: String) {
